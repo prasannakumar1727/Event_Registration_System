@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Register – EventHub</title><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/css/style.css"></head>
+<body data-page="register">
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="container">
+<a class="brand" href="/"><i aria-hidden="true"></i>EventHub</a>
+<button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">&#9776;</button>
+<nav class="menu" id="menu" aria-label="Main"><a href="/">Events</a><a href="/organizer_login.html">Organizer login</a></nav>
+</div></header>
+<main id="main">
+<div class="container page"><div class="form-narrow"><div class="crumb"><a href="/">Events</a> / Register</div>
+<div class="panel"><h1 id="regTitle">Register</h1><p id="regSub" class="meta"></p>
+<div id="formMsg" class="alert err" role="alert"></div>
+<form id="regForm" novalidate>
+<div class="field"><label for="name">Full name</label><input id="name" name="name" autocomplete="name" maxlength="60" required aria-describedby="err-name"><div class="err" id="err-name"></div></div>
+<div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" required aria-describedby="err-email"><div class="err" id="err-email"></div></div>
+<div class="field"><label for="phone">Phone (10 digits)</label><input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="14" required aria-describedby="err-phone"><div class="err" id="err-phone"></div></div>
+<div class="row2"><div class="field"><label for="college">College <span class="opt">(optional)</span></label><input id="college" name="college" maxlength="100" aria-describedby="err-college"><div class="err" id="err-college"></div></div>
+<div class="field"><label for="ticket_type">Ticket type</label><select id="ticket_type" name="ticket_type"><option>General</option><option>Student</option><option>VIP</option></select><div class="err" id="err-ticket_type"></div></div></div>
+<button class="btn block" id="submitBtn" type="submit">Confirm registration</button>
+</form></div></div></div></main>
+<footer><div class="container">EventHub &middot; Event Registration System &middot; Internship Week 4 project</div></footer>
+<script src="/js/script.js"></script></body></html>

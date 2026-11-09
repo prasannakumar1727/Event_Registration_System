@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Organizer dashboard – EventHub</title><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/css/style.css"></head>
+<body data-page="dashboard">
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="container">
+<a class="brand" href="/"><i aria-hidden="true"></i>EventHub</a>
+<button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">&#9776;</button>
+<nav class="menu" id="menu" aria-label="Main"><a href="/">Public site</a><button id="logoutBtn" type="button">Log out</button></nav>
+</div></header>
+<main id="main">
+<div class="container page">
+<div class="sect first"><div><h1 class="flush">Organizer dashboard</h1><span class="meta" id="who"></span></div>
+<button class="btn" id="newEvent" type="button">+ New event</button></div>
+<div class="kpis" id="kpis"></div>
+<div class="sect"><h2>Events</h2></div>
+<div class="tablewrap"><table><thead><tr><th>Event</th><th>Date</th><th>Venue</th><th>Registered</th><th>Seats left</th><th>Actions</th></tr></thead><tbody id="evRows"></tbody></table></div>
+<div class="sect" id="participants"><h2>Participants</h2>
+<div class="tools"><select id="evSelect" aria-label="Filter by event"></select>
+<input class="search" id="pq" type="search" placeholder="Search name, email, phone, ID" aria-label="Search participants">
+<a class="btn sec sm" id="exportBtn" href="/organizer/export">Export CSV</a></div></div>
+<div class="tablewrap"><table><thead><tr><th>Reg ID</th><th>Name</th><th>Email</th><th>Phone</th><th>College</th><th>Ticket</th><th>Status</th><th>Actions</th></tr></thead><tbody id="regRows"></tbody></table></div>
+<p class="meta" id="regCount" aria-live="polite"></p></div>
+<dialog id="evDialog" aria-labelledby="dlgTitle"><form id="evForm" novalidate>
+<h2 id="dlgTitle">New event</h2><div id="evMsg" class="alert err" role="alert"></div>
+<div class="field"><label for="e_title">Title</label><input id="e_title" maxlength="120" required><div class="err" id="err-title"></div></div>
+<div class="row2"><div class="field"><label for="e_category">Category</label><select id="e_category"><option>Workshop</option><option>Seminar</option><option>Hackathon</option><option>Conference</option></select><div class="err" id="err-category"></div></div>
+<div class="field"><label for="e_seat_limit">Seat limit</label><input id="e_seat_limit" type="number" min="1" max="10000" required><div class="err" id="err-seat_limit"></div></div></div>
+<div class="row2"><div class="field"><label for="e_date">Date</label><input id="e_date" type="date" required><div class="err" id="err-date"></div></div>
+<div class="field"><label for="e_time">Time</label><input id="e_time" type="time" required><div class="err" id="err-time"></div></div></div>
+<div class="field"><label for="e_venue">Venue</label><input id="e_venue" maxlength="120" required><div class="err" id="err-venue"></div></div>
+<div class="field"><label for="e_description">Description</label><textarea id="e_description" rows="3" maxlength="2000" required></textarea><div class="err" id="err-description"></div></div>
+<div class="field"><label for="e_schedule">Schedule <span class="opt">(one per line, e.g. 10:00 | Keynote)</span></label><textarea id="e_schedule" rows="4"></textarea><div class="err" id="err-schedule"></div></div>
+<div class="actions"><button class="btn sec" type="button" id="evCancel">Cancel</button><button class="btn" type="submit" id="evSave">Save event</button></div>
+</form></dialog></main>
+<footer><div class="container">EventHub &middot; Event Registration System &middot; Internship Week 4 project</div></footer>
+<script src="/js/script.js"></script></body></html>
